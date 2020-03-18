@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
+using Plugin.Fingerprint;
+using Plugin.CurrentActivity;
 
 namespace landbankDemo.Droid
 {
@@ -15,6 +17,7 @@ namespace landbankDemo.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

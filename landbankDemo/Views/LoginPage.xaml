@@ -20,7 +20,8 @@
                                           NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
-            
+            <Button Text="Scan Fingerprint" HorizontalOptions="FillAndExpand"
+                    Command="{Binding FingerprintCommand}"/>
         
         </StackLayout>
     </ContentPage.Content>  

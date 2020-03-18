@@ -1,6 +1,9 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
+Plugin.CurrentActivity
+Plugin.Fingerprint.Android.Samsung
+Plugin.Fingerprint
 Prism.Forms
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime

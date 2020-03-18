@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
 using landbankDemo.Views;
+using Plugin.Fingerprint;
 
 namespace landbankDemo
 {
@@ -20,6 +21,7 @@ namespace landbankDemo
         public T Resolve<T>() => Container.Resolve<T>();
 
         public INavigationService NavigationSvc => NavigationService;
+
         protected override void OnInitialized()
         {
             InitializeComponent();
@@ -29,8 +31,7 @@ namespace landbankDemo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance(UserDialogs.Instance);
-
+            containerRegistry.RegisterInstance(CrossFingerprint.Current);
             containerRegistry.RegisterInstance(UserDialogs.Instance);
             containerRegistry.RegisterForNavigation<RegisterPage>();
             containerRegistry.RegisterForNavigation<LoginPage>();

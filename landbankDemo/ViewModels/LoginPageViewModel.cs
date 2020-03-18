@@ -3,20 +3,24 @@ using System.Windows.Input;
 using Acr.UserDialogs;
 using landbankDemo.ViewModels.Base;
 using landbankDemo.Views;
+using Plugin.Fingerprint;
 using Prism.Commands;
 using Prism.Navigation;
-
+using landbankDemo.Models;
 namespace landbankDemo.ViewModels
 {
     public class LoginPageViewModel : BaseNavigationViewModel
     {
         private readonly IUserDialogs _userDialogs;
+        private Model model = new Model();
         public LoginPageViewModel(INavigationService navigationService, IUserDialogs userDialogs) : base(navigationService)
         {
             _userDialogs = userDialogs;
             LoginCommand = new DelegateCommand(Login);
             RegisterCommand = new DelegateCommand(Register);
+            FingerprintCommand = new DelegateCommand(Fingerprint);
         }
+
         #region Bindable Commands
         public ICommand LoginCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
@@ -56,6 +60,21 @@ namespace landbankDemo.ViewModels
         public void Register()
         {
             NavigationService.NavigateAsync(nameof(RegisterPage));
+        }
+        public async void Fingerprint()
+        {
+            var cancellationToken = new System.Threading.CancellationToken();
+            var scanResult = await CrossFingerprint.Current.AuthenticateAsync("Show what you have", cancellationToken);
+            if(scanResult.Authenticated)
+            {
+                model.Result = "Authenticated via fingerprint";
+                await NavigationService.NavigateAsync(nameof(HomePage));
+            }
+            else
+            {
+                model.Result = "Authentication failed";
+                return;
+            }
         }
 
 

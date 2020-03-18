@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="landbankDemo.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10" VerticalOptions="End">
+            <Label Text=" Username " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="1,1,1,10"/>
+            <Entry Text="{Binding User}" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Password" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="1,1,1,3" />
+            <Entry Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+            <Label Text="{Binding LoginResult}" HorizontalOptions="FillAndExpand" />
+            <Button Text="Login"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    Command="{Binding LoginCommand}"
+                    HorizontalOptions="FillAndExpand" Margin="1,1,1,100"/>
+            <Label Text="REGISTER" VerticalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}"
+                                          NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+        
+        </StackLayout>
+    </ContentPage.Content>  
+</ContentPage>

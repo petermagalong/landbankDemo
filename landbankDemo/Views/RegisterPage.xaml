@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="landbankDemo.Views.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,40,10,10">
+            <Button Text="Upload Photo"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    HorizontalOptions="Center"/>
+            <Label Text="Employee Number" HorizontalOptions="FillAndExpand" />
+            <Entry Text="" HorizontalOptions="FillAndExpand"/>
+            <Label Text="FirstName" HorizontalOptions="FillAndExpand" />
+            <Entry Text="" HorizontalOptions="FillAndExpand"/>
+            <Label Text="LastName" HorizontalOptions="FillAndExpand" />
+            <Entry Text="" HorizontalOptions="FillAndExpand"/>
+            <Label Text=" Username " HorizontalOptions="FillAndExpand" />
+            <Entry Text="{Binding User}" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Password" HorizontalOptions="FillAndExpand" />
+            <Entry Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+            <Label Text="Confirm Password" HorizontalOptions="FillAndExpand" />
+            <Entry Text="{Binding ConfirmPassword}" HorizontalOptions="FillAndExpand" />
+            <Button Text="Register"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    Command="{Binding RegisterCommand}"
+                    HorizontalOptions="FillAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

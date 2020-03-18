@@ -1,0 +1,121 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/admin/Projects/landbankDemo/landbankDemo.Android/landbankDemo.Android.csproj": {}
+  },
+  "projects": {
+    "/Users/admin/Projects/landbankDemo/landbankDemo.Android/landbankDemo.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/admin/Projects/landbankDemo/landbankDemo.Android/landbankDemo.Android.csproj",
+        "projectName": "landbankDemo.Android",
+        "projectPath": "/Users/admin/Projects/landbankDemo/landbankDemo.Android/landbankDemo.Android.csproj",
+        "packagesPath": "/Users/admin/.nuget/packages/",
+        "outputPath": "/Users/admin/Projects/landbankDemo/landbankDemo.Android/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/admin/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {
+              "/Users/admin/Projects/landbankDemo/landbankDemo/landbankDemo.csproj": {
+                "projectPath": "/Users/admin/Projects/landbankDemo/landbankDemo/landbankDemo.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.908675, )"
+            }
+          }
+        }
+      }
+    },
+    "/Users/admin/Projects/landbankDemo/landbankDemo/landbankDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/admin/Projects/landbankDemo/landbankDemo/landbankDemo.csproj",
+        "projectName": "landbankDemo",
+        "projectPath": "/Users/admin/Projects/landbankDemo/landbankDemo/landbankDemo.csproj",
+        "packagesPath": "/Users/admin/.nuget/packages/",
+        "outputPath": "/Users/admin/Projects/landbankDemo/landbankDemo/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/admin/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.440, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Prism.DryIoc.Forms": {
+              "target": "Package",
+              "version": "[7.2.0.1422, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.908675, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

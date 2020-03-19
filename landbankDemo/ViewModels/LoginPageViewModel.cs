@@ -7,6 +7,11 @@ using Plugin.Fingerprint;
 using Prism.Commands;
 using Prism.Navigation;
 using landbankDemo.Models;
+using System.IO;
+using SQLite;
+using landbankDemo.Tables;
+using Xamarin.Forms;
+
 namespace landbankDemo.ViewModels
 {
     public class LoginPageViewModel : BaseNavigationViewModel
@@ -56,6 +61,19 @@ namespace landbankDemo.ViewModels
             {
                 NavigationService.NavigateAsync(nameof(HomePage));
             }
+
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+            var myquery = db.Table<RegUserTable>().Where(u => u.UserName.Equals(User) && u.Password.Equals(Password)).FirstOrDefault();
+            if (myquery != null)
+            {
+                NavigationService.NavigateAsync(nameof(HomePage));
+            }
+            else
+            {
+                    _userDialogs.Alert("Wrong Username or Password ");
+                return;
+             }
         }
         public void Register()
         {

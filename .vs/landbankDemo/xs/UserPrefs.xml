@@ -1,32 +1,29 @@
 ﻿<Properties StartupConfiguration="{3DCE594C-6BDF-4EF5-BA0A-5B61A2CE82E0}|Default">
   <MonoDevelop.Ide.ItemProperties.landbankDemo.iOS FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="landbankDemo/ViewModels/LoginPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="landbankDemo/Views/HomePage.xaml.cs">
     <Files>
+      <File FileName="landbankDemo/Views/RegisterPage.xaml" Line="13" Column="66" />
+      <File FileName="landbankDemo/ViewModels/RegisterPageViewModel.cs" Line="114" Column="1" />
       <File FileName="landbankDemo/Views/LoginPage.xaml" Line="1" Column="1" />
-      <File FileName="landbankDemo/ViewModels/LoginPageViewModel.cs" Line="67" Column="1" />
-      <File FileName="landbankDemo.Android/MainActivity.cs" Line="13" Column="29" />
-      <File FileName="landbankDemo/Models/Model.cs" Line="4" Column="11" />
-      <File FileName="landbankDemo/App.xaml.cs" Line="34" Column="72" />
-      <File FileName="landbankDemo/Views/LoginPage.xaml.cs" Line="10" Column="43" />
-      <File FileName="landbankDemo/ViewModels/Base/BaseNavigationViewModel.cs" Line="1" Column="1" />
-      <File FileName="landbankDemo/ViewModels/Base/BaseViewModel.cs" Line="1" Column="1" />
-      <File FileName="landbankDemo/App.xaml" Line="1" Column="1" />
+      <File FileName="landbankDemo/Tables/RegUserTable.cs" Line="6" Column="33" />
+      <File FileName="landbankDemo/Views/RegisterPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="landbankDemo/ViewModels/LoginPageViewModel.cs" Line="70" Column="1" />
+      <File FileName="landbankDemo/Views/HomePage.xaml" Line="1" Column="1" />
+      <File FileName="landbankDemo/Views/LoginPage.xaml.cs" Line="14" Column="1" />
+      <File FileName="landbankDemo/obj/Debug/netstandard2.0/Views/LoginPage.xaml.g.cs" Line="22" Column="1" />
+      <File FileName="landbankDemo/Views/HomePage.xaml.cs" Line="10" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="landbankDemo" expanded="True">
             <Node name="landbankDemo" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="Base" expanded="True" />
-                <Node name="LoginPageViewModel.cs" selected="True" />
-              </Node>
+              <Node name="Tables" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="HomePage.xaml" expanded="True" />
+                <Node name="HomePage.xaml" expanded="True">
+                  <Node name="HomePage.xaml.cs" selected="True" />
+                </Node>
                 <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="RegisterPage.xaml" expanded="True" />
               </Node>
@@ -42,7 +39,12 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/admin/Desktop/landbankDemo/landbankDemo/ViewModels/LoginPageViewModel.cs" relfile="landbankDemo/ViewModels/LoginPageViewModel.cs" line="67" column="1" />
+      <Breakpoint file="/Users/admin/Desktop/landbankDemo/landbankDemo/ViewModels/LoginPageViewModel.cs" relfile="landbankDemo/ViewModels/LoginPageViewModel.cs" line="68" column="1" />
+      <Breakpoint file="/Users/admin/Desktop/landbankDemo/landbankDemo/ViewModels/RegisterPageViewModel.cs" relfile="landbankDemo/ViewModels/RegisterPageViewModel.cs" line="108" column="1" />
+      <Breakpoint file="/Users/admin/Desktop/landbankDemo/landbankDemo/ViewModels/RegisterPageViewModel.cs" relfile="landbankDemo/ViewModels/RegisterPageViewModel.cs" line="98" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

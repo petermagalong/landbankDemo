@@ -18,7 +18,6 @@
 /Users/admin/Desktop/landbankDemo/landbankDemo/bin/Debug/netstandard2.0/landbankDemo.dll
 /Users/admin/Desktop/landbankDemo/landbankDemo/bin/Debug/netstandard2.0/ref/landbankDemo.dll
 /Users/admin/Desktop/landbankDemo/landbankDemo/bin/Debug/netstandard2.0/landbankDemo.pdb
-/Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/landbankDemo.csprojAssemblyReference.cache
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/Views/HomePage.xaml.g.cs

@@ -23,13 +23,11 @@ namespace landbankDemo.ViewModels
             _userDialogs = userDialogs;
             LoginCommand = new DelegateCommand(Login);
             RegisterCommand = new DelegateCommand(Register);
-            FingerprintCommand = new DelegateCommand(Fingerprint);
         }
 
         #region Bindable Commands
         public ICommand LoginCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
-        public ICommand FingerprintCommand { get; set; }
         #endregion
 
         #region Bindable Properties
@@ -72,28 +70,14 @@ namespace landbankDemo.ViewModels
             else
             {
                     _userDialogs.Alert("Wrong Username or Password ");
-                return;
+                    return;
              }
         }
         public void Register()
         {
             NavigationService.NavigateAsync(nameof(RegisterPage));
         }
-        public async void Fingerprint()
-        {
-            var cancellationToken = new System.Threading.CancellationToken();
-            var scanResult = await CrossFingerprint.Current.AuthenticateAsync("Show what you have", cancellationToken);
-            if(scanResult.Authenticated)
-            {
-                model.Result = "Authenticated via fingerprint";
-                await NavigationService.NavigateAsync(nameof(HomePage));
-            }
-            else
-            {
-                model.Result = "Authentication failed";
-                return;
-            }
-        }
+        
 
 
         #endregion

@@ -1,26 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="landbankDemo.Views.HomePage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="End" Margin="15">
+        <StackLayout>
+        <StackLayout>
+            <Label Text="{Binding DateNowCommand}" VerticalOptions="Center"/>
+            <Label Text="{Binding FullName}" VerticalOptions="End" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" Margin="15">
           <Button VerticalOptions="Start"
                   Text="Check in"
-                  Command="{Binding ClearFormCommand}">
+                  Command="{Binding CheckInCommand}">
           </Button>
             <Button VerticalOptions="End"
                   Text="Lunch in"
-                  Command="{Binding SaveFormCommand}">
+                  Command="{Binding LunchInCommand}">
             </Button>
             <Button VerticalOptions="End"
                   Text="Lunch out"
-                  Command="{Binding SaveFormCommand}">
+                  Command="{Binding LunchOutCommand}">
             </Button>
           <Button VerticalOptions="End"
                   Text="Check out"
-                  Command="{Binding SaveFormCommand}">
+                  Command="{Binding CheckOutCommand}">
               
           </Button>
       </StackLayout>
+       </StackLayout>
     </ContentPage.Content>
 </ContentPage>

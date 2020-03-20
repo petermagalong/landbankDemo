@@ -8,17 +8,17 @@ namespace landbankDemo.ViewModels.Base
     {
         public void Destroy()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

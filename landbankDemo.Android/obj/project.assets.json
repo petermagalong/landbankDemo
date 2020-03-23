@@ -974,7 +974,7 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Plugin.Fingerprint": "1.4.9",
           "Prism.DryIoc.Forms": "7.2.0.1422",
-          "Xamarin.Essentials": "1.3.1",
+          "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.3.0.908675",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -2526,5 +2526,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Essentials from 1.5.1 to 1.3.1. Reference the package directly from the project to select a different version. \n landbankDemo.Android -> landbankDemo -> Xamarin.Essentials (>= 1.5.1) \n landbankDemo.Android -> Xamarin.Essentials (>= 1.3.1)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    }
+  ]
 }

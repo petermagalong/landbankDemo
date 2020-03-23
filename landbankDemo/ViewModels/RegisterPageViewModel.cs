@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
@@ -79,39 +80,76 @@ namespace landbankDemo.ViewModels
         }
 
         #endregion
+        public bool validation(string SomeString)
+        {
+            Regex r = new Regex("^[a-zA-Z ]*$");
+            if (r.IsMatch(SomeString))
+            {
+                return false;
+            }
+            else return true;
 
+        }
         #region Method
         public void Register()
         {
-            if (string.IsNullOrEmpty(UserName) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(ConfirmPassword))
+            try
             {
-                _userDialogs.Alert("Please input all fields");
-                return;
+                if (string.IsNullOrEmpty(UserName) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(ConfirmPassword) && string.IsNullOrEmpty(ScanNumber) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Suffix) && string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(EmployeeNumber))
+                {
+                    _userDialogs.Alert("Please input all fields");
+                    return;
+                }
+                else if (validation(FirstName))
+                {
+                    _userDialogs.Alert("Pls dont input special chharacter or number in your name!");
+                    return;
+                }
+                else if (validation(LastName))
+                {
+                    _userDialogs.Alert("Pls dont input special chharacter or number in your Lastname!");
+                    return;
+                }
+                else if (validation(Suffix))
+                {
+                    _userDialogs.Alert("Pls dont input special chharacter or number in your suffix");
+                    return;
+                }
+                else if(Password != ConfirmPassword)
+                {
+                    _userDialogs.Alert("Password not match!");
+                    return;
+                }
+                else if (UserName != "" && Password != "" && ConfirmPassword != "")
+                {
+                    //_userDialogs.Alert("Succesfully Registered");
+                    var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+                    var db = new SQLiteConnection(dbpath);
+                    db.CreateTable<RegUserTable>();
+
+                    var item = new RegUserTable()
+                    {
+                        UserName = UserName,
+                        Password = Password,
+                        ScanNumber = ScanNumber,
+                        EmployeeNumber = EmployeeNumber,
+                        FirstName = FirstName,
+                        LastName = LastName,
+                        Suffix = Suffix
+                    };
+                    db.Insert(item);
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+
+                        await NavigationService.NavigateAsync(nameof(LoginPage));
+                    });
+                    NavigationService.NavigateAsync(nameof(LoginPage));
+                }
             }
-            else if (UserName != "" && Password != "" && ConfirmPassword != "")
+            catch(Exception e)
             {
-                //_userDialogs.Alert("Succesfully Registered");
-                var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-                var db = new SQLiteConnection(dbpath);
-                db.CreateTable<RegUserTable>();
-
-                var item = new RegUserTable()
-                {
-                    UserName = UserName,
-                    Password = Password,
-                    ScanNumber = ScanNumber,
-                    EmployeeNumber = EmployeeNumber,
-                    FirstName = FirstName,
-                    LastName = LastName,
-                    Suffix = Suffix
-                };
-                db.Insert(item);
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-
-                    await NavigationService.NavigateAsync(nameof(LoginPage));
-                });
-                NavigationService.NavigateAsync(nameof(LoginPage));
+                _userDialogs.Alert("Enter all fields");
+                return;
             }
             
 

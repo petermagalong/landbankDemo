@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Prism.Navigation;
 
 namespace landbankDemo.ViewModels.Base

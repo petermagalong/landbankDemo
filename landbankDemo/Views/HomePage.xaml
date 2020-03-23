@@ -3,25 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="landbankDemo.Views.HomePage">
+             x:Class="landbankDemo.Views.HomePage"
+             BackgroundColor="#66ff99">
     <ContentPage.Content>
         <StackLayout>
         <StackLayout>
-            <Label Text="{Binding DateNowCommand}" VerticalOptions="Center"/>
-            <Label Text="{Binding FullName}" VerticalOptions="End" />
+            <Label Text="{Binding geoaddress}" VerticalOptions="Start" />
         </StackLayout>
+            <StackLayout Margin="1,50,40,1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+               
+                    <Label Text="{Binding daytodayDisplay}"></Label>
+                    <Label Text="{Binding displayTime,StringFormat='{0:T}'}" FontSize="Large"></Label>
+            </StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" Margin="15">
-          <Button VerticalOptions="Start"
+            <Grid> 
+                <Label Text="ScanNumber: " FontSize="Medium" Grid.Column="0" Grid.Row="0"   HorizontalOptions="Start"/>
+                <Label Text="{Binding ScanNumber}" FontSize="Medium" Grid.Column="0" Grid.Row="0"  HorizontalOptions="End"/>
+            </Grid>
+            <Grid>
+                <Label Text="DateTime:  " FontSize="Medium" Grid.Column="0" Grid.Row="0" />
+                <Label Text="{Binding DateNowCommand}" FontSize="Medium" Grid.Column="0" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="End"/>
+            </Grid>
+            <Grid>
+                <Label Text="FullName: "   HorizontalOptions="Start" FontSize="Medium" Grid.Column="0" Grid.Row="0" Margin="1,1,1,1"/>
+                <Label Text="{Binding FnameCommand}" Grid.Column="1" FontSize="Medium" Grid.Row="0"  HorizontalOptions="End"/>
+            </Grid>
+            <Grid>
+                <Label Text="Coordinates: "  VerticalOptions="EndAndExpand" FontSize="Medium" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="{Binding GeoLocator}" VerticalOptions="StartAndExpand" FontSize="Medium" HorizontalOptions="End" Margin="1,1,1,1" Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+            <Button VerticalOptions="Start"
                   Text="Check in"
                   Command="{Binding CheckInCommand}">
           </Button>
             <Button VerticalOptions="End"
-                  Text="Lunch in"
-                  Command="{Binding LunchInCommand}">
+                  Text="Break out"
+                  Command="{Binding LunchOutCommand}">
             </Button>
             <Button VerticalOptions="End"
-                  Text="Lunch out"
-                  Command="{Binding LunchOutCommand}">
+                  Text="Break in"
+                  Command="{Binding LunchInCommand}">
             </Button>
           <Button VerticalOptions="End"
                   Text="Check out"

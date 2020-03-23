@@ -16,8 +16,10 @@ namespace landbankDemo.ViewModels
 {
     public class LoginPageViewModel : BaseNavigationViewModel
     {
+        
         private readonly IUserDialogs _userDialogs;
         private Model model = new Model();
+        private readonly INavigationService _navigationService;
         public LoginPageViewModel(INavigationService navigationService, IUserDialogs userDialogs) : base(navigationService)
         {
             _userDialogs = userDialogs;
@@ -46,8 +48,11 @@ namespace landbankDemo.ViewModels
             set => SetProperty(ref _password, value);
         }
         #endregion
-
+        
+            
+        
         #region Method
+        
         public void Login()
         {
             if (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(User))
@@ -57,7 +62,10 @@ namespace landbankDemo.ViewModels
             }
             else if (User == "admin" && Password == "admin")
             {
-                NavigationService.NavigateAsync(nameof(HomePage));
+                INavigationParameters navParameters = new NavigationParameters();
+                navParameters.Add("User", User);
+
+                NavigationService.NavigateAsync(nameof(HomePage), navParameters);
             }
 
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
@@ -65,7 +73,11 @@ namespace landbankDemo.ViewModels
             var myquery = db.Table<RegUserTable>().Where(u => u.UserName.Equals(User) && u.Password.Equals(Password)).FirstOrDefault();
             if (myquery != null)
             {
-                NavigationService.NavigateAsync(nameof(HomePage));
+                INavigationParameters navParameters = new NavigationParameters();
+                navParameters.Add("User", myquery.FirstName + " "+myquery.LastName);
+                navParameters.Add("ScanNum", myquery.ScanNumber);
+
+                NavigationService.NavigateAsync(nameof(HomePage), navParameters);
             }
             else
             {

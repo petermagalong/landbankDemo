@@ -1046,3 +1046,4 @@
 /Users/admin/Desktop/landbankDemo/landbankDemo.Android/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/admin/Desktop/landbankDemo/landbankDemo.Android/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/admin/Desktop/landbankDemo/landbankDemo.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
+/Users/admin/Desktop/landbankDemo/landbankDemo.Android/obj/Debug/stamp/SetupDependenciesForDesigner.stamp

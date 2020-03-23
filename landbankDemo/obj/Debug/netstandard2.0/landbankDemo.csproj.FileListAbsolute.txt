@@ -29,3 +29,4 @@
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/landbankDemo.dll
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/ref/landbankDemo.dll
 /Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/landbankDemo.pdb
+/Users/admin/Desktop/landbankDemo/landbankDemo/obj/Debug/netstandard2.0/landbankDemo.csprojAssemblyReference.cache

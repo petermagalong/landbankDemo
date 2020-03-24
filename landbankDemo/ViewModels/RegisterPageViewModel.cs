@@ -105,6 +105,11 @@ namespace landbankDemo.ViewModels
                     _userDialogs.Alert("Pls dont input special chharacter or number in your name!");
                     return;
                 }
+                else if(dupicateUser(ScanNumber).Equals(false))
+                {
+                    _userDialogs.Alert("Scannumber already exist");
+                    return;
+                }
                 else if (validation(LastName))
                 {
                     _userDialogs.Alert("Pls dont input special chharacter or number in your Lastname!");
@@ -153,6 +158,20 @@ namespace landbankDemo.ViewModels
             }
             
 
+        }
+        public bool dupicateUser(string Scannumber)
+        {
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+            var myquery = db.Table<RegUserTable>().Where(u => u.ScanNumber.Equals(Scannumber)).FirstOrDefault();
+            if (myquery == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private Task DisplayAlert(string v1, string v2, string v3, string v4)

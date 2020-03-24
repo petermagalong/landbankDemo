@@ -4,7 +4,8 @@
              x:Class="landbankDemo.Views.LoginPage"
              BackgroundColor="#66ff99">
     <ContentPage.Content>
-        <StackLayout Margin="20,20,20,20" VerticalOptions="End">
+        <StackLayout Margin="40,20,40,20" VerticalOptions="End">
+            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Landbank.svg/1200px-Landbank.svg.png" Margin="1,40,1,50"/>
             <Entry Placeholder="Username" Text="{Binding User}" HorizontalOptions="FillAndExpand" />
             <Entry Placeholder="Password" Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True"/>
             <Label Text="{Binding LoginResult}" HorizontalOptions="FillAndExpand" />

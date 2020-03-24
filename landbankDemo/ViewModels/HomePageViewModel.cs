@@ -128,6 +128,11 @@ namespace landbankDemo.ViewModels
                 _userDialogs.Alert("invalid location! " + geoaddress);
                 return;
             }
+            else if (duplicateInput("CheckIn").Equals(false))
+            {
+                _userDialogs.Alert("Already CheckIn! ");
+                return;
+            }
             else
             {
                 timelogs("CheckIn");
@@ -142,7 +147,12 @@ namespace landbankDemo.ViewModels
                 _userDialogs.Alert("invalid location! " + geoaddress);
                 return;
             }
-            else
+            else if (duplicateInput("LunchOut").Equals(false))
+            {
+                _userDialogs.Alert("Already LunchOut! ");
+                return;
+            }
+            else if(duplicateInput("LunchOut").Equals(true))
             {
                 timelogs("LunchOut");
                 _userDialogs.Alert("Succesfully LunchOut ! ");
@@ -157,7 +167,12 @@ namespace landbankDemo.ViewModels
                 _userDialogs.Alert("invalid location! " + geoaddress);
                 return;
             }
-            else
+            else if (duplicateInput("LunchIn").Equals(false))
+            {
+                _userDialogs.Alert("Already LunchIn! ");
+                return;
+            }
+            else if(duplicateInput("LunchOut").Equals(true))
             {
                 timelogs("LunchIn");
                 _userDialogs.Alert("Succesfully BreakIn ! ");
@@ -171,7 +186,12 @@ namespace landbankDemo.ViewModels
                 _userDialogs.Alert("invalid location! " + geoaddress);
                 return;
             }
-            else
+            else if(duplicateInput("CheckOut").Equals(false))
+            {
+                _userDialogs.Alert("Already checkout! ");
+                return;
+            }
+            else if (duplicateInput("LunchOut").Equals(true))
             {
                 timelogs("CheckOut");
                 _userDialogs.Alert("Succesfully TimeOut ! ");
@@ -197,6 +217,29 @@ namespace landbankDemo.ViewModels
             };
             db.Insert(item);
 
+        }
+
+        public bool duplicateInput(string checktype)
+        {
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+            var myquery = db.Table<TimeUserTable>().Where(u => u.ScanNumber.Equals(ScanNumber) && u.Checklog.Equals(checktype)).FirstOrDefault();
+            if (myquery == null)
+            {
+                return true;
+            }
+            else
+            {
+                if (myquery.Datelog.ToString("MMddyyyy").Equals(DateNowCommand.ToString("MMddyyyy")) && myquery.Checklog.Equals(checktype))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            
         }
 
         #region Maps API

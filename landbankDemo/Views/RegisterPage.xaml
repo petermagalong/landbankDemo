@@ -1,27 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="landbankDemo.Views.RegisterPage">
+             x:Class="landbankDemo.Views.RegisterPage"
+             BackgroundColor="#66ff99">
     <ContentPage.Content>
         <StackLayout Margin="10,40,10,10">
-            <Button Text="Upload Photo"
+            <Button Text="Take a Picture"
                     BackgroundColor="Gray"
                     TextColor="White"
                     HorizontalOptions="Center"/>
-            <Label Text="Employee Number" HorizontalOptions="FillAndExpand" />
-            <Entry Text="" HorizontalOptions="FillAndExpand"/>
-            <Label Text="FirstName" HorizontalOptions="FillAndExpand" />
-            <Entry Text="" HorizontalOptions="FillAndExpand"/>
-            <Label Text="LastName" HorizontalOptions="FillAndExpand" />
-            <Entry Text="" HorizontalOptions="FillAndExpand"/>
-            <Label Text=" Username " HorizontalOptions="FillAndExpand" />
-            <Entry Text="{Binding User}" HorizontalOptions="FillAndExpand"/>
-            <Label Text="Password" HorizontalOptions="FillAndExpand" />
-            <Entry Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True"/>
-            <Label Text="Confirm Password" HorizontalOptions="FillAndExpand" />
-            <Entry Text="{Binding ConfirmPassword}" HorizontalOptions="FillAndExpand" />
+            <Entry Placeholder="ScanNumber" Text="{Binding ScanNumber}" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="EmployeeNumber" Text="{Binding EmployeeNumber}" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="UserName" Text="{Binding UserName}" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="Password" Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True" />
+            <Entry Placeholder="ConfirmPassword" Text="{Binding ConfirmPassword}" HorizontalOptions="FillAndExpand" IsPassword="True" />
+            <Entry Placeholder="FirstName" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
+            <Entry Placeholder="LastName" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
+            <Entry Placeholder="Suffix" Text="{Binding Suffix}" HorizontalOptions="FillAndExpand" />
             <Button Text="Register"
-                    BackgroundColor="Blue"
+                    BackgroundColor="#009999"
                     TextColor="White"
                     Command="{Binding RegisterCommand}"
                     HorizontalOptions="FillAndExpand"/>
